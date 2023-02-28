@@ -7,18 +7,20 @@ import 'package:xlomobx/stores/page_store.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeParse();
+  setupLocators();
   runApp(const MyApp());
 }
 
-void setLocators() {
+void setupLocators() {
   GetIt.I.registerSingleton(PageStore());
+  // GetIt.I.registerSingleton(UserManagerStore());
 }
 
 Future<void> initializeParse() async {
   await Parse().initialize(
-    'IY4Eg78DuKw9o3bhUHLBMrd9V21YQHsEbn9tyeQv',
-    'https://parseapi.back4app.com',
-    clientKey: 'IwlQ7LSL4l6Fne1bCaATbL5quVjiWyB7xxZr0Dth',
+    'g7SpGW6DZVnjVtFnxGWRkFK9GzWPe5Nd3XpZWl6d',
+    'https://parseapi.back4app.com/',
+    clientKey: 'VfbVYwkN86nRoh5QdLoEvDRxv7tTujHsRuzwSgN4',
     autoSendSessionId: true,
     debug: true,
   );
@@ -32,9 +34,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'XLO Mobx',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.purple,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          color: Colors.purple,
+        ),
       ),
+      debugShowCheckedModeBanner: false,
       home: const MainScreen(),
     );
   }
