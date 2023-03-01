@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xlomobx/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -121,8 +122,8 @@ class LoginScreen extends StatelessWidget {
                               ),
                             ),
                             onTap: () {
-                              // Navigator.of(context).push(MaterialPageRoute(
-                              // builder: (_) => SingUpScreen()));
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (_) => const SignUpScreen()));
                             },
                           )
                         ],
